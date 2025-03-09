@@ -13,7 +13,7 @@ use self::fallible::*;
 async fn get() -> Result<String> {
     let id = Uuid::new_v4();
     info!("id: {id}");
-    Ok(id.to_string())
+    Ok(format!("{id}\n"))
 }
 
 #[tokio::main]
