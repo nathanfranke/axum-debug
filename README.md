@@ -13,5 +13,14 @@ curl -fsSL https://get.docker.com | sudo sh
 
 ```sh
 BUILDKIT_PROGRESS=plain docker compose up --build
-# http://127.0.0.1:8080
+# listening on http://127.0.0.1:8080
+```
+
+## example
+
+```sh
+curl -v http://127.0.0.1:8080/
+# > GET / HTTP/1.1
+# < HTTP/1.1 200 OK
+# d0df57fc-e88f-4dee-a7ea-dc777aa4e7ad
 ```
