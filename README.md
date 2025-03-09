@@ -12,6 +12,10 @@ curl -fsSL https://get.docker.com | sudo sh
 ## deploy
 
 ```sh
+tee .env <<EOF
+SERVER_ENDPOINT=127.0.0.1:8080
+EOF
+
 BUILDKIT_PROGRESS=plain docker compose up --build
 # listening on http://127.0.0.1:8080
 ```
