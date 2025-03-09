@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    environment:
+      - SERVER_ENDPOINT=0.0.0.0:8080
+      - RUST_LOG=info
+    ports:
+      - 127.0.0.1:8080:8080

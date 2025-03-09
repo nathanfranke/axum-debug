@@ -1,0 +1,17 @@
+[package]
+name = "axum-debug"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+dotenvy = "0.15.7"
+tokio = { version = "1.44.0", features = ["full"] }
+axum = "0.8.1"
+thiserror = "2.0.12"
+uuid = { version = "1.15.1", features = ["v4"] }
+env_logger = "0.11.6"
+log = "0.4.26"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
