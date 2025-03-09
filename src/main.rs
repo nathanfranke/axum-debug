@@ -19,7 +19,7 @@ async fn get() -> Result<String> {
 #[tokio::main]
 async fn main() -> Result<()> {
     dotenvy::dotenv().ok();
-    env_logger::try_init()?;
+    env_logger::builder().filter_level(log::LevelFilter::Info).try_init()?;
 
     let router = Router::new().route("/", routing::get(get));
 
