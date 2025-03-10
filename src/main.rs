@@ -21,12 +21,12 @@ async fn main() -> Result<()> {
     dotenvy::dotenv().ok();
     env_logger::builder().filter_level(log::LevelFilter::Info).try_init()?;
 
+    let server_endpoint = dotenvy::var("SERVER_ENDPOINT")?;
+
     let router = Router::new().route("/", routing::get(get));
 
-    let server_endpoint = dotenvy::var("SERVER_ENDPOINT")?;
     let listener = TcpListener::bind(&server_endpoint).await?;
-
-    info!("listening on http://127.0.0.1:{}", listener.local_addr()?.port());
+    info!("listening at http://{}", listener.local_addr()?);
 
     axum::serve(listener, router).await?;
 
