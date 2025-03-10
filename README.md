@@ -5,18 +5,15 @@ http server that logs a random UUID for each request and sends it to the client.
 ## setup
 
 ```sh
-# WARNING: INSECURE
+# install docker
+# WARNING: insecure; use at your own risk
 curl -fsSL https://get.docker.com | sudo sh
 ```
 
 ## deploy
 
 ```sh
-tee .env <<EOF
-SERVER_ENDPOINT=127.0.0.1:8080
-EOF
-
-BUILDKIT_PROGRESS=plain docker compose up --build
+BUILDKIT_PROGRESS=plain docker compose up --build --detach
 # listening on http://127.0.0.1:8080
 ```
 
